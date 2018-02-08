@@ -119,6 +119,7 @@ obs <- as.numeric()
 #  }
 #}
 
+# Find centroids (different values between them)
 flag <- TRUE
 while(flag){
   center1 <- xnew[sample(1:150,1),]
