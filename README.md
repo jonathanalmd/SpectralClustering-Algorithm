@@ -1,3 +1,5 @@
-Implementação do algoritmo disponível no artigo: https://www.cs.cmu.edu/%7Eefros/courses/LBMV07/Papers/ng-nips-01.pdf
+# Spectral Clustering Algorithm implementation in R
 
-Ng, A., Jordan, M., Weiss, Y.: On Spectral Clustering: Analysis and an algorithm. In: Dietterich, T., Becker, S., Ghahramani, Z. (eds.) Advances in Neural Information Processing Systems 14, pp. 849–856. MIT Press, Cambridge (2002).
+A simple application of a cool machine learning algorithm using Iris dataset
+
+Spectral Clustering algorithm description and explanation: https://www.cs.cmu.edu/%7Eefros/courses/LBMV07/Papers/ng-nips-01.pdf
