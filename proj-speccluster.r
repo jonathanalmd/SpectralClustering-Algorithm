@@ -8,10 +8,14 @@
 # ========================= INICIO =========================
 
 # Dados <- read.csv("/Users/jalmeida/Documents/UnB/1_2017/Grafos/Listas/Prático/Projeto/proc-iris.data.txt", header=FALSE)
-Dados <- read.csv("/Users/jalmeida/Documents/UnB/1_2017/Grafos/Listas/Prático/Projeto/iris.data.txt", header=FALSE)
-
-# printar inicio da tabela (6 primeiras linhas)
+# Dados <- read.csv("/Users/jalmeida/Documents/UnB/1_2017/Grafos/Listas/Prático/Projeto/iris.data.txt", header=FALSE)
+source("set_wdir.r")
+set_wdir()
+input_data = paste(getwd(),"iris.data.txt",sep="/")
+input_data
+Dados <- read.csv(input_data, header=FALSE)
 head(Dados)
+# printar inicio da tabela (6 primeiras linhas)
 
 #my.data <- as.matrix(Dados[,c(1,2)])
 my.data <- as.matrix(Dados[,c(3,4)])
@@ -119,7 +123,6 @@ obs <- as.numeric()
 #  }
 #}
 
-# Find centroids (different values between them)
 flag <- TRUE
 while(flag){
   center1 <- xnew[sample(1:150,1),]
@@ -132,6 +135,8 @@ while(flag){
     flag <- FALSE
   }
 }
+
+# Find centroids (different values between them)
 
 for(n in 1:40000){ # rodar varias vezes para ir aprimorando os centroides
   for(i in 1:150){ # 150 instancias 
@@ -175,7 +180,9 @@ for(n in 1:40000){ # rodar varias vezes para ir aprimorando os centroides
 km <- kmeans (Y,4,nstart=20)   # com y da ruim (nao da mais!)
 #km <- kmeans (X,3,nstart=20) 
 plot(S, col=km$cluster)
-
+km <- kmeans (Y,3,nstart=20)   # com y da ruim (nao da mais!)
+#km <- kmeans (X,3,nstart=20) 
+plot(S, col=km$cluster)
 # plota os pontos com a classificacao (lembrando: S = dados e obs = classificacao dos dados)
 plot(S, col=obs)
 
