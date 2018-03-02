@@ -40,20 +40,18 @@ round(A[1:8,1:8],5)
 
 # ========================== STEP 2 ==========================
 # sum of each row from A to build a diagonal matrix
-for (i in 1:n){ # pega a soma de cada linha do A e colocando na matriz diagonal
+for (i in 1:n){ 
   D[i,i] <- sum (A[i,])
 }
 round(D[1:8,1:8],5)
 
-# raiz de cada elemento da matriz
 # sqrt of each element from matrix
 raiz.D     <- sqrt (D)       #obs1 : raiz.D %*% raiz.D = D
                                   # raiz.D x raiz.D = D (mul matrix)
-# solve() para pegar inversa
-# get matrix inverse
+# get matrix inverse (solve())
 Inv.raiz.D <- solve(raiz.D)  #obs2 : solve inversa da raiz = raiz da inversa  
                              # sqrt (solve (D)) = solve (sqrt (D))  
-# calcula o L
+# compute L
 L <- Inv.raiz.D %*% A %*% Inv.raiz.D
 
 round(L[1:8,1:8],5)
@@ -99,10 +97,9 @@ for(i in 1:n){
 Y
 xnew <- Y
 # K-MEANS 
-# observações; cada instancia que vai ser classificada em uma das k (no caso 3) classes
 obs <- as.numeric()
 
-# seta centroides iniciais 
+# set centroids
 #center1<- sample(seq(-1,1,by=0.1),3,replace=T)
 #center2<- sample(seq(-1,1,by=0.1),3,replace=T)
 #center3<- sample(seq(-1,1,by=0.1),3,replace=T)
