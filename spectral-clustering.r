@@ -134,7 +134,7 @@ while(flag){
 
 # Find centroids (different values between them)
 
-for(n in 1:40000){ # upgrade centroids (repeating)
+for(n in 1:30000){ # update centroids (repeating)
   for(i in 1:150){ # 150 instances
     dist1<- sum((xnew[i,]-center1)^2)
     dist2<- sum((xnew[i,]-center2)^2)
@@ -174,15 +174,15 @@ for(n in 1:40000){ # upgrade centroids (repeating)
   }
   
 }
-km <- kmeans (Y,4,nstart=20)   
+km <- kmeans (Y,3,nstart=20)   
 #km <- kmeans (X,3,nstart=20) 
 plot(S, col=km$cluster)
 km <- kmeans (Y,3,nstart=20)  
 #km <- kmeans (X,3,nstart=20) 
-plot(S, col=km$cluster)
+plot(S, col=km$cluster, xlab = 'Petal Width', ylab = 'Petal Length')
 # plot classified data
 # S = data, obs = clusters
-plot(S, col=obs)
+plot(S, col=obs, xlab = 'Petal Width', ylab = 'Petal Length')
 
 xnew
 center1
