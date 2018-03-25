@@ -1,17 +1,22 @@
 ---
-title: "Projeto ITG - IRIS DATA"
+title: "Spectral Clustering Algorithm"
 author: "Jonathan Mendes de Almeida"
 output:
     pdf_document
 ---
 
+```{r setup, include=FALSE}
+# Set Rmd file location as current directory
+knitr::opts_knit$set(root.dir = getwd())
+```
+
 # PETAL LENGTH/WIDTH DATA
 
-## 0. Início
+## 0. Init
 
 __0.1 Pegar os dados do arquivo__
 ```{r eval=TRUE}
-Dados <- read.csv("/Users/jalmeida/Documents/Programming/GitHub/R/SpectralClustering-Algorithm/iris.data.txt", header=FALSE)
+Dados <- read.csv("iris.data.txt", header=FALSE)
 ```
 
 __0.2 Printar início dos dados (6 primeiras linhas da tabela) e salva em my.data__
@@ -228,7 +233,7 @@ icenter3
 
 __0.1 Pegar os dados do arquivo__
 ```{r eval=TRUE}
-Dados <- read.csv("/Users/jalmeida/Documents/Programming/GitHub/R/SpectralClustering-Algorithm/iris.data.txt", header=FALSE)
+Dados <- read.csv("iris.data.txt", header=FALSE)
 ```
 
 __0.2 Printar início dos dados (6 primeiras linhas da tabela) e salva em my.data__
