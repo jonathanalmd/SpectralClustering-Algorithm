@@ -201,9 +201,10 @@ plot(S, col=km$cluster)
 km <- kmeans (Y,3,nstart=20)  
 #km <- kmeans (X,3,nstart=20) 
 
-# Plot
-plot(S, col=km$cluster)
-plot(S, col=obs)
+# Plot both
+plot(S, col=km$cluster, main = 'Petal Width vs Petal Length', sub = 'Species classification', xlab = 'Petal Width', ylab = 'Petal Length')
+plot(S, col=obs, main = 'Petal Width vs Petal Length', sub = 'Species classification', xlab = 'Petal Width', ylab = 'Petal Length')
+
 ```
 
 ### Compare centroinds values (initial and final values)
