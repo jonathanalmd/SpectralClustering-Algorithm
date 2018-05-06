@@ -1,5 +1,6 @@
 # sspec documentation: https://www.rdocumentation.org/packages/kernlab/versions/0.9-26/topics/specc
 # install.packages("kernlab")
+# Unsupervised learning
 
 library(kernlab)
 
@@ -16,6 +17,17 @@ withinss(sc)
 train
 
 plot(train, col=sc)
+
+
+library(tidyverse) 
+df <- data.frame(train)
+class <- sc[1:150]
+class <- replace(class, class == 1, 'a')
+class <- replace(class, class == 2, 'b')
+class <- replace(class, class == 3, 'c')
+df["class"] <- class
+ggplot(data = df, aes(x = Petal.Length, y = Petal.Width, colour = class)) + geom_point()
+
 
 
 # 'predict': closest kernel

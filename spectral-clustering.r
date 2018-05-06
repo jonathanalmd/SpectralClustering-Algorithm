@@ -6,9 +6,15 @@
 
 # ========================= Init =========================
 
-source("set_wdir.r")
+set_wdir <- function() {
+  library(rstudioapi) 
+  current_path <- getActiveDocumentContext()$path 
+  setwd(dirname(current_path ))
+  print( getwd() )
+}
+
 set_wdir()
-input_data = paste(getwd(),"iris.data.txt",sep="/")
+input_data = paste(getwd(),"iris.data.csv",sep="/")
 input_data
 Dados <- read.csv(input_data, header=FALSE)
 head(Dados)
@@ -19,7 +25,7 @@ my.data <- as.matrix(Dados[,c(3,4)])
 n <- nrow(my.data)
 S <- my.data
 A <- matrix(rep(0,n^2) ,nrow = n ,ncol=n)
-sigma2 <- 5 # between 0.05 to 10
+sigma2 <- 5 # between 0.05 and 10
 D <- diag(n)
 
 
